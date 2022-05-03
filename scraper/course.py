@@ -17,7 +17,7 @@ class CourseReq:
         # reqcourse should always be an array
         match reqtype:
             case PrereqType.SINGLEPREREQ:
-                self.reqcourse = [params] # passes a single [course, mark] tuple. Mark will be -1 in most cases
+                self.reqcourse = [params] # passes a single [, mark] tuple. Mark will be -1 in most cases
             case PrereqType.MULTIPLEPREQS:
                 self.reqcourse = params # assumes that params are a list of [course, mark] tuples
             case PrereqType.NUMBERRANGEPREREQ:  # params: [dept, faculty, lowerbound, upperbound, mark]
@@ -65,3 +65,7 @@ class Course:
         self.antireqs = antireqs # Same with this
         self.coreqs = coreqs # and this
 
+class SimplifiedCourse:
+    def __init__(self, dept, course_code):
+        self.dept = dept
+        self.course_code = course_code
