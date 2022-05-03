@@ -61,9 +61,9 @@ def parse(crs_crd, dept, fac):
     course_creds = re.search("(\.*\d+)(?!.*\d)", crs_crd.find("strong").text)
     if course_creds is not None:
         course_creds = course_creds.group(0)
-    course_offered = crs_crd.find("em", string=lambda text: None if text is None else "Offered:" in text)
-    if not course_offered is None:
-        offered = course_offered.text[course_offered.text.index('Offered:') + 9: course_offered.text.index(']')]
+    offered_indx = crs_crd.text.find("Offered:")
+    if offered_indx != -1:
+        offered = crs_crd.text[offered_indx + 9: crs_crd.text.index(']')]
     else:
         offered = None
     cross_listed = crs_crd.findAll("em", string=lambda text: None if text is None else "Cross-listed" in text)
