@@ -19,12 +19,23 @@ class CourseReq:
             case PrereqType.SINGLEPREREQ:
                 self.reqcourse = [params] # passes a single [course, mark] tuple. Mark will be -1 in most cases
             case PrereqType.MULTIPLEPREQS:
-                self.reqcourse = params
-            case PrereqType.NUMBERRANGEPREREQ:
+                self.reqcourse = params # assumes that params are a list of [course, mark] tuples
+            case PrereqType.NUMBERRANGEPREREQ:  # params: [dept, faculty, lowerbound, upperbound, mark]
                 self.dept = params[0]
                 self.faculty = params[1]
                 self.lowerBound = params[2]
                 self.upperBound = params[3]
+                self.mark = params[4]
+            case PrereqType.COURSELEVELPREREQ:
+                self.dept = params[0]
+                self.faculty = params[1]
+                self.courselevel = params[2] # so 0 for 0XX, 1 for 1XX and so on
+                self.mark = params[3]
+            case PrereqType.INDEPTREQ:
+                self.dept = params[0]
+                self.faculty = params[1]
+                self.mark = params[2]
+
 
 class Course:
     def __init__(self, name, desc, dept, faculty, course_num, credits, offered, crosslisted, prereqs, antireqs, coreqs):
