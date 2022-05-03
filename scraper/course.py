@@ -35,7 +35,21 @@ class CourseReq:
                 self.dept = params[0]
                 self.faculty = params[1]
                 self.mark = params[2]
-
+            case PrereqType.NOTINDEPTPREREQ:
+                self.dept = params[0]
+                self.faculty = params[1]
+                self.mark = params[2]
+            case PrereqType.INFACULTYPREREQ:
+                self.faculty = params[0]
+                self.mark = params[1]
+            case PrereqType.NOTINFACULTYPREREQ:
+                self.faculty = params[0]
+                self.mark = params[1]
+            case PrereqType.DEGREELEVELPREREQ:
+                self.degreelevel = params[0]
+                self.mark = parmas[1]
+            case PrereqType.DEPTCONSENTPREREQ:
+                self.deptconsent = true
 
 class Course:
     def __init__(self, name, desc, dept, faculty, course_num, credits, offered, crosslisted, prereqs, antireqs, coreqs):
