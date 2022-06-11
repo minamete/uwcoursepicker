@@ -1,16 +1,15 @@
 import {useState, useEffect} from 'react';
 
 function HomePage() {
-    // const [response, setResponse] = useState('');
-   /* useEffect(() => {
+    useEffect(() => {
         callAPI();
     }, [])
 
     function callAPI() {
-        fetch("http://localhost:9000/testAPI")
+        fetch("http://localhost:8080/courses")
             .then(res => res.text())
-            .then(res => setResponse(res));
-    }*/
+            .then(res => console.log(res));
+    }
 
     
     return(

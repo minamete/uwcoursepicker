@@ -5,7 +5,7 @@ function DevPortal() {
     return(
         <div>
             <h1> Dev tools </h1>
-            <button onClick={() => refreshDB()}> Refresh database </button> <br />
+            <button onClick={refreshDB}> Refresh database </button> <br />
             <button> Delete database </button> 
         </div>
     )
