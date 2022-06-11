@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 function HomePage() {
-    const [response, setResponse] = useState('');
+    // const [response, setResponse] = useState('');
    /* useEffect(() => {
         callAPI();
     }, [])
