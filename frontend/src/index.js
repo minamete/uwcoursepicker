@@ -5,7 +5,5 @@ import WebsiteRouter from './components/Router'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <WebsiteRouter />
-  </React.StrictMode>
 );

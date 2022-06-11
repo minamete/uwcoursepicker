@@ -15,6 +15,6 @@ const CourseSchema = new Schema({
     antireqs: {},
 })
 
-const CourseModel = mongoose.model('Course', CourseSchema, 'coursesStr')
+const CourseModel = mongoose.model('Course', CourseSchema, 'coursesStr');
 
-export default CourseModel
+module.exports = CourseModel;
